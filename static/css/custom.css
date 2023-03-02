@@ -1,0 +1,26 @@
+body{
+    font-family: 'Poppins';
+}
+
+.drop{
+    display: none;
+}
+
+.form{
+    display: flex;
+    gap: 10px;
+}
+
+.droparea{
+    width: 20vw;
+    height: 20vh;
+
+    background-color: rgba(128, 128, 128, 0.356);
+    border-radius: 10px;
+
+    border: 2px dotted black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+
+    <div class="container-fluid hero mt-5">
+        <div class="pt-4 container pb-5">
+            <h1 class="display-1">Plant Disease Detection</h1>
+            <h2 class="mb-0 ">AI Powered site which predicts wether paddy crops are healthy or not.</h2>
+            <h3 class="">The model takes thermal images as input.</h3>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row mb-5">
+        <div class="col-sm-3 fs-4">
+          Upload the image
+
+        </div>
+        
+        <div class="col-sm-4 ">
+          <form action = "/success" method = "post" enctype="multipart/form-data" class="form">  
+            <label class="droparea">
+
+              <p>Drag and Drop file or upload.</p>
+              <input class="drop" type="file" name="file" />  
+            </label>
+
+            <div>
+              <input type = "submit" value="Upload" class="btn btn-success">
+            </div>
+           
+          </form> 
+          <div>
+            <br>
+            <h3>{{ filenm }}</h3>
+          </div>
+          
+             
+        </div>  
+    </div>
+
+        <div class="row mb-5 ">
+            <div class="col-sm-3  mt-2">
+                <div class="card border-primary mb-3" style="height:100%;">
+                    <div class="card-header border-primary ">Model V1</div>
+                    <div class="card-body ">
+                      <h5 class="card-title fw-bold">CNN Model</h5>
+                      <p class="card-text">
+                        A native CNN Model trained with healthy and unheathy thremal images of paddy plants.
+                        The model has 92% Accuracy.
+                      </p>
+                      <button type="button" class="btn btn-warning"><a href="https://colab.research.google.com/drive/1sqShPU22aPhkeJrVsPWJNqQdvZBvfg3R?usp=sharing" 
+                      style="text-decoration: none;">View Model</a></button>
+                      
+                    </div>
+                  </div>
+
+            </div>
+
+            <div class="col-sm-3  mt-2">
+                <div class="card border-primary mb-3"  style="height:100%;">
+                    <div class="card-header border-primary">Model V2</div>
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold">MobileNet</h5>
+                      <p class="card-text">This site and its conents are under development. User is adviced. </p>
+                    </br>
+                    v1.07
+                    </div>
+                  </div>
+            </div> 
+            
+        </div>
+
+    </div>
+
+    
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Ctrl{% endblock %}
+{% block content %}
+
+    <div class="container-fluid hero mt-5">
+        <div class="pt-4 container pt-5 pb-5">
+            <h1 class="fw-bold fs-1">User List</h1>
+            <ol>
+                {% for s in ss %}
+                <li>{{ s.name }} | {{ s.mail }} | {{ s.dateCreated }}</li>
+                {% endfor %}
+            </ol>
+            
+
+        </div>
+
+    </div>
+
+
+{% endblock %}

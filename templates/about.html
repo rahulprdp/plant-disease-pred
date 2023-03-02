@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock %}
+{% block content %}
+
+    <div class="container mt-5 ">
+
+        <h1 class="display-1">About</h1>
+        <h1 class="">Motivation </h1>
+        <p class="ms-4 mb-5">
+          Our study aims to provide an efficient solution for detecting multiple diseases in several plant varieties using thermal imaging .The Indian economy is extremely reliant on agricultural productivity.
+           The latest improvements in computer vision formulated through deep learning have paved the way for how to detect and diagnose diseases in plants by using a camera.
+            Disease-infected plants usually show obvious marks on leaves, stems, flowers, or fruits. Generally, each disease or pest condition presents a unique visible pattern that can be used to uniquely diagnose abnormalities. 
+            Usually, the leaves of plants are the primary source for identifying plant diseases, and most of the symptoms of diseases may begin to appear on the leaves Early plant disease detection plays a significant role in efficient crop yield.
+        This early prediction will increase the probability and time to recovery; reduce the use of pesticide, resulting in cost effective, quantitative and qualitative production with less environmental pollution.
+
+        </p>
+
+        <hr>
+    </div>
+    
+    
+
+    <div class="container">
+      <div class="row mt-4">
+        <div class="col-sm-4 mt-2 ">
+          <form action="{{ url_for('appends') }}" method="POST">
+            <h3>Stay Connected</h3>
+            <div class="mb-3">
+              <label for="username" class="form-label">Name</label>
+              <input type="text" class="form-control" name="userName" value="{{ name }}">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="text" class="form-control" aria-describedby="emailHelp" name="userEmail" value="{{ mail }}" >
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+            
+          </form>
+          
+          {% if errorStmt %}
+
+          <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+            <strong>{{ errorStmt }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+          {% endif %}
+
+          
+          {% if sucMsg %}
+          <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+            <strong>{{ sucMsg }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+          {% endif %}
+
+        </div>
+
+        
+      </div>
+    </div>
+
+
+{% endblock %}
